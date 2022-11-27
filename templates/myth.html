@@ -22,5 +22,11 @@
 
 <p>(Text from <a href="https://en.wikipedia.org/wiki/Tiger" target="_blank">Wikipedia</a>)</p>
 
+<ul>
+  <!-- note how items from routes in the the Python script are linked -->
+  <li><a href="{{ url_for('myth') }}">In myth and legend</a></li>
+  <li><a href="{{ url_for('symbol') }}">As a symbol</a></li>
+</ul>
+
 
 {% endblock %}

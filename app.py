@@ -8,7 +8,7 @@ app = Flask(__name__)
 @app.route('/')
 @app.route('/index.html')
 def index():
-    return render_template('index.html', the_title='Tigre Home Page')
+    return render_template('index.html', the_title='Gestão de Demanda Contratada')
 
 @app.route('/symbol.html')
 def symbol():

@@ -20,14 +20,21 @@ body {
 }
 
 h1, h2 {
-    font-family: 'Droid Serif', serif;
+    font-family: Arial,sans-serif;
     font-size: 3em;
     margin: 0;
 		padding-bottom: 1em;
 }
 
-h2 {
-    font-size: 2em;
+
+h2{
+  font-size: 48px;
+  color: #066a75;
+  padding: 2px 0 10px 0;
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: 30px;
 }
 
 p, li {
@@ -68,4 +75,15 @@ a:hover {
         width: 100%;
         padding: 2em;
     }
+}
+/* esconde as ancoras da tela */
+a.links{
+  display: none;
+}
+
+.content{
+  width: 500px;
+  min-height: 560px;
+  margin: 0px auto;
+  position: relative;
 }
