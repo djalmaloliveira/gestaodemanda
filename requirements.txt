@@ -1,0 +1,11 @@
+Flask
+Flask-RESTful
+
+Jinja2
+Werkzeug
+
+itsdangerous
+gunicorn
+
+# to test mysql connectivity
+mysql-connector
