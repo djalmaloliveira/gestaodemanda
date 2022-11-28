@@ -10,6 +10,10 @@ app = Flask(__name__)
 def index():
     return render_template('index.html', the_title='Gestão de Demanda Contratada')
 
+@app.route('/cliente.html')
+def cliente():
+    return render_template('cliente.html', the_title='Gestão de Demanda Contratada')
+
 @app.route('/symbol.html')
 def symbol():
     return render_template('symbol.html', the_title='Tigre As Symbol')
