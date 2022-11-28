@@ -15,8 +15,7 @@
           <p>
             <label for="nome_login">Seu nome</label>
             <input id="nome_login" name="nome_login" required="required" type="text" placeholder="ex. contato@gestaodemanda.com"/>
-          </p>
-          <p>
+
             <label for="email_login">Seu e-mail</label>
             <input id="email_login" name="email_login" required="required" type="password" placeholder="ex. senha" />
           </p>
@@ -30,7 +29,32 @@
         </form>
       </div>
 
+<div id="login">
+    <form class="formulario" method="post">
+        <p> Preencha do formulário</p>
 
+        <div class="field">
+            <label for="telefone">Nome :</label>
+            <input type="text" id="txtNomeEmpresa" name="telefone" placeholder="Digite nome da empresa">
+        </div>
+
+        <div class="field">
+            <label for="password"> Senha :</label>
+            <input id="Password" name="password"  required="required" type="password" placeholder="ex. senha">
+        </div>
+
+
+        <div class="field radiobox">
+            <span>Manter logado ?</span>
+            <input type="radio" name="novidades" id="sim" value="sim" checked><label for="sim">Sim</label>
+            <input type="radio" name="novidades" id="nao" value="nao"><label for="nao">Não</label>
+        </div>
+
+
+        <input type="submit" name="acao" value="Logar">
+    </form>
+</div>
+<p>.</p>
 
 
 {% endblock %}
