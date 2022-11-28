@@ -28,12 +28,21 @@ h1, h2 {
 
 
 h2{
-  font-size: 48px;
+  font-size: 32px;
   color: #066a75;
   padding: 2px 0 10px 0;
   font-family: Arial,sans-serif;
   font-weight: bold;
   text-align: center;
+  padding-bottom: 30px;
+}
+
+h3{
+  font-size: 20px;
+  padding: 2px 0 10px 0;
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  text-align: left;
   padding-bottom: 30px;
 }
 

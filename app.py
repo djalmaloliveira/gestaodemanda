@@ -14,6 +14,10 @@ def index():
 def cliente():
     return render_template('cliente.html', the_title='Gestão de Demanda Contratada')
 
+@app.route('/manual.html')
+def manual():
+    return render_template('manual.html', the_title='Manual do Gestão de Demanda Contratada')
+
 @app.route('/symbol.html')
 def symbol():
     return render_template('symbol.html', the_title='Tigre As Symbol')

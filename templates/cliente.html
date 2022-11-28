@@ -6,10 +6,11 @@
 
 <img alt="Dados do cliente" src="{{ url_for('static', filename='images/moeda01.jpg') }}">
 <p>
-<nav>||
-    <a href="/index">Página Inicial</a>    ||
-    <a href="/cliente">Cliente</a>    ||
-    <a href="/manual">Manual</a>    ||
+<nav>|
+
+    <a href="{{ url_for('index') }}">Página Inicial</a>    ||
+    <a href="{{ url_for('cliente') }}">Cliente</a>    ||
+    <a href="{{ url_for('manual') }}">Manual</a>    ||
 </nav>
 </p>
 
