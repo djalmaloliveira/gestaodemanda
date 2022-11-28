@@ -16,7 +16,7 @@ def symbol():
 
 @app.route('/myth.html')
 def myth():
-    return render_template('myth.html', the_title='Tigre na minha Legenda')
+    return render_template('myth.html', the_title='Gestão de Damanda - Cliente')
 
 @app.route('/ip')
 def ip():
