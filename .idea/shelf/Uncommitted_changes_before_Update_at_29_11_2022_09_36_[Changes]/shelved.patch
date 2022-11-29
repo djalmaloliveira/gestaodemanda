@@ -1,0 +1,328 @@
+Index: templates/index.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{% extends 'base.html' %}\n\n{% block body %}\n\n<!-- to be filled by the Python script -->\n<h2>{{ the_title }}</h2>\n\n<!-- note how items from the \"static\" folder are linked -->\n<img alt=\"Photo: Bengal Tiger\" src=\"{{ url_for('static', filename='images/Login01.jpg') }}\">\n<p class=\"credit\">Acesso ao sistema: <a href=\"{{ url_for('myth') }}\" target=\"_blank\"> Login</a></p>\n\n<div id=\"login\">\n        <form method=\"post\" action=\"\">\n          <h2>Login</h2>\n          <p>\n            <label for=\"nome_login\">Seu nome</label>\n            <input id=\"nome_login\" name=\"nome_login\" required=\"required\" type=\"text\" placeholder=\"ex. contato@gestaodemanda.com\"/>\n\n            <label for=\"email_login\">Seu e-mail</label>\n            <input id=\"email_login\" name=\"email_login\" required=\"required\" type=\"password\" placeholder=\"ex. senha\" />\n          </p>\n\n          <p>\n            <input type=\"checkbox\" name=\"manterlogado\" id=\"manterlogado\" value=\"\" />\n            <label for=\"manterlogado\">Manter-me logado</label>\n         <input type=\"submit\" value=\"Logar\" /></p>\n          <p class=\"link\"> Ainda não tem conta?<a href=\"#paracadastro\">Cadastre-se</a>\n          </p>\n        </form>\n      </div>\n\n<div id=\"login\">\n    <form class=\"formulario\" method=\"post\">\n        <p> Preencha do formulário</p>\n\n        <div class=\"field\">\n            <label for=\"telefone\">Nome :</label>\n            <input type=\"text\" id=\"txtNomeEmpresa\" name=\"telefone\" placeholder=\"Digite nome da empresa\">\n        </div>\n\n        <div class=\"field\">\n            <label for=\"password\"> Senha :</label>\n            <input id=\"Password\" name=\"password\"  required=\"required\" type=\"password\" placeholder=\"ex. senha\">\n        </div>\n\n\n        <div class=\"field radiobox\">\n            <span>Manter logado ?</span>\n            <input type=\"radio\" name=\"novidades\" id=\"sim\" value=\"sim\" checked><label for=\"sim\">Sim</label>\n            <input type=\"radio\" name=\"novidades\" id=\"nao\" value=\"nao\"><label for=\"nao\">Não</label>\n        </div>\n\n\n        <input type=\"submit\" name=\"acao\" value=\"Logar\">\n    </form>\n</div>\n<p>.</p>\n\n\n{% endblock %}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/templates/index.html b/templates/index.html
+--- a/templates/index.html	(revision 34d342728865bf97c6294199c38be061a5cb7350)
++++ b/templates/index.html	(date 1669724834432)
+@@ -7,30 +7,12 @@
+ 
+ <!-- note how items from the "static" folder are linked -->
+ <img alt="Photo: Bengal Tiger" src="{{ url_for('static', filename='images/Login01.jpg') }}">
+-<p class="credit">Acesso ao sistema: <a href="{{ url_for('myth') }}" target="_blank"> Login</a></p>
++<p class="credit">Acesso ao sistema: <a href="{{ url_for('cliente') }}" target="_blank">Login</a></p>
+ 
+-<div id="login">
+-        <form method="post" action="">
+-          <h2>Login</h2>
+-          <p>
+-            <label for="nome_login">Seu nome</label>
+-            <input id="nome_login" name="nome_login" required="required" type="text" placeholder="ex. contato@gestaodemanda.com"/>
+-
+-            <label for="email_login">Seu e-mail</label>
+-            <input id="email_login" name="email_login" required="required" type="password" placeholder="ex. senha" />
+-          </p>
+-
+-          <p>
+-            <input type="checkbox" name="manterlogado" id="manterlogado" value="" />
+-            <label for="manterlogado">Manter-me logado</label>
+-         <input type="submit" value="Logar" /></p>
+-          <p class="link"> Ainda não tem conta?<a href="#paracadastro">Cadastre-se</a>
+-          </p>
+-        </form>
+-      </div>
+-
+-<div id="login">
+-    <form class="formulario" method="post">
++
++<div id="login" align="center">
++    <form class="formulario" method="post" action="">
++        <h2>Login</h2>
+         <p> Preencha do formulário</p>
+ 
+         <div class="field">
+@@ -50,11 +32,14 @@
+             <input type="radio" name="novidades" id="nao" value="nao"><label for="nao">Não</label>
+         </div>
+ 
+-
+-        <input type="submit" name="acao" value="Logar">
++        <div class="field">
++
++            <p class="credit"><a href="{{url_for('cliente')}}"><input type="button" value=" Logar "></a></p>
++
++        </div>
+     </form>
+ </div>
+-<p>.</p>
+ 
+ 
+-{% endblock %}
++
++{% endblock %}
+\ No newline at end of file
+Index: templates/base.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\n<html>\n<head>\n\t<meta charset=\"utf-8\">\n\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n\t<title>{{ the_title }}</title>\n  <link href=\"https://fonts.googleapis.com/css?family=Droid+Serif|Source+Sans+Pro\" rel=\"stylesheet\">\n\t<link rel=\"stylesheet\" href=\"{{ url_for('static', filename='css/main.css') }}\">\n</head>\n\n<body>\n\n<div id=\"container\">\n\n  <!-- Jinja2 directives: page contents will go between them -->\n  {% block body %}\n  {% endblock %}\n\n</div>\n\n</body>\n</html>\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/templates/base.html b/templates/base.html
+--- a/templates/base.html	(revision 34d342728865bf97c6294199c38be061a5cb7350)
++++ b/templates/base.html	(date 1669724870573)
+@@ -4,8 +4,20 @@
+ 	<meta charset="utf-8">
+ 	<meta name="viewport" content="width=device-width, initial-scale=1">
+ 	<title>{{ the_title }}</title>
+-  <link href="https://fonts.googleapis.com/css?family=Droid+Serif|Source+Sans+Pro" rel="stylesheet">
++    <link href="https://fonts.googleapis.com/css?family=Droid+Serif|Source+Sans+Pro" rel="stylesheet">
+ 	<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
++
++    <div id="login" align="center">
++        <nav>|
++            <a href="{{ url_for('index') }}">Página Inicial</a>    ||
++            <a href="{{ url_for('cliente') }}">Cliente</a>    ||
++            <a href="{{ url_for('formulario') }}">Formulario</a>    ||
++            <a href="{{ url_for('projeto') }}">Projeto</a>    ||
++            <a href="{{ url_for('manual') }}">Manual</a>    ||
++
++        </nav>
++    </div>
++
+ </head>
+ 
+ <body>
+@@ -15,8 +27,12 @@
+   <!-- Jinja2 directives: page contents will go between them -->
+   {% block body %}
+   {% endblock %}
+-
++    <i>
++    <h5>Projeto desenvolvido pelo aluno de Eng. Elétrica Senai Londrina Djalma Oliveira</h5>
++    </i>
+ </div>
+ 
++
++
+ </body>
+-</html>
++</html>
+\ No newline at end of file
+Index: README.md
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># Deploy Your Flask Project To Heroku\n\nThis is an example repository that uses **Flask** and **Gunicorn** to deploy your project to Heroku. [Demo app link](https://flask-basic-example.herokuapp.com/)\n\n## Fork The Repository\n\nYou should **fork the repository** and then **clone it** so you can manage your own repo and use this only as a template.\n\n```\n$ git clone https://github.com/your_username/flask-heroku-example.git\n```\n\nAt this point you should be able to modify the Flask app `app.py`:\n\n**WARNING:** If you change the file name (`app.py`) and the Flask **app** (`app = Flask(__name__)`) then remember to change Heroku's Procfile:\n```\nweb: gunicorn <filename>:<app_name>\n```\n\n## Login to Heroku account using Heroku CLI\n\n```\n$ heroku login\n```\n\n## Create Your Heroku App\n\nYou can also leave `your_app_name` empty if you want Heroku to create a randomized name.\n\n```\n$ heroku create your_app_name\nCreating app... done, ⬢ your_app_name\nhttps://your_app_name.herokuapp.com/ | https://git.heroku.com/your_app_name.git\n```\n\n## Deploy Your Project\n\nYour project is going to be deploy using **gunicorn** as a web server using the **Procfile** and it will be detected as a Python project since it is declared in **runtime.txt**\n\n* **Add necessary files and commit them**\n```bash\n$ git add -A\n$ git commit -am \"finished flask project\"\n```\n\n* **Push to Heroku**\n```bash\n$ git push heroku master\n-- SNIP --\nremote: -----> Python app detected\nremote: -----> Installing python-3.6.5\nremote: -----> Installing pip\nremote: -----> Installing dependencies with Pipenv 11.8.2…\nremote:        Installing dependencies from Pipfile.lock (59a99c)…\nremote: -----> Discovering process types\nremote:        Procfile declares types -> web\nremote:\nremote: -----> Compressing...\nremote:        Done: 53.9M\nremote: -----> Launching...\nremote:        Released v3\nremote:        https://your_app_name.herokuapp.com/ deployed to Heroku\nremote:\nremote: Verifying deploy... done.\nTo https://git.heroku.com/your_app_name.git\n * [new branch]      master -> master\n```\n\nThat's it, you can visit your app now with `heroku open`.\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/README.md b/README.md
+--- a/README.md	(revision 34d342728865bf97c6294199c38be061a5cb7350)
++++ b/README.md	(date 1669724730642)
+@@ -1,5 +1,11 @@
++# Sistema de Gestão de Demanda Contratada
++
++
+ # Deploy Your Flask Project To Heroku
+ 
++site no Heroku:
++https://gestaodemandagrupoa.herokuapp.com/
++
+ This is an example repository that uses **Flask** and **Gunicorn** to deploy your project to Heroku. [Demo app link](https://flask-basic-example.herokuapp.com/)
+ 
+ ## Fork The Repository
+Index: Teste45.txt
+===================================================================
+diff --git a/Teste45.txt b/Teste45.txt
+deleted file mode 100644
+--- a/Teste45.txt	(revision 34d342728865bf97c6294199c38be061a5cb7350)
++++ /dev/null	(revision 34d342728865bf97c6294199c38be061a5cb7350)
+@@ -1,1 +0,0 @@
+-Teste45 de inclus�o de conteudo 
+Index: runtime.txt
+===================================================================
+diff --git a/runtime.txt b/runtime.txt
+deleted file mode 100644
+--- a/runtime.txt	(revision 34d342728865bf97c6294199c38be061a5cb7350)
++++ /dev/null	(revision 34d342728865bf97c6294199c38be061a5cb7350)
+@@ -1,1 +0,0 @@
+-python-3.6.5
+Index: Teste44.txt
+===================================================================
+diff --git a/Teste44.txt b/Teste44.txt
+deleted file mode 100644
+--- a/Teste44.txt	(revision 34d342728865bf97c6294199c38be061a5cb7350)
++++ /dev/null	(revision 34d342728865bf97c6294199c38be061a5cb7350)
+@@ -1,1 +0,0 @@
+-Teste de inclus�o de conteudo 
+Index: Teste46.txt
+===================================================================
+diff --git a/Teste46.txt b/Teste46.txt
+deleted file mode 100644
+--- a/Teste46.txt	(revision 34d342728865bf97c6294199c38be061a5cb7350)
++++ /dev/null	(revision 34d342728865bf97c6294199c38be061a5cb7350)
+@@ -1,1 +0,0 @@
+-Teste46 de inclus�o de conteudo 
+Index: requirements.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>Flask\nFlask-RESTful\n\nJinja2\nWerkzeug\n\nitsdangerous\ngunicorn\n\n# to test mysql connectivity\nmysql-connector\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/requirements.txt b/requirements.txt
+--- a/requirements.txt	(revision 34d342728865bf97c6294199c38be061a5cb7350)
++++ b/requirements.txt	(date 1669724683484)
+@@ -1,11 +1,12 @@
+-Flask
+-Flask-RESTful
+-
+-Jinja2
+-Werkzeug
+-
+-itsdangerous
+-gunicorn
+-
+-# to test mysql connectivity
+-mysql-connector
++click==8.1.3
++colorama==0.4.5
++Flask==2.1.2
++fonttools==4.34.4
++gunicorn==20.1.0
++h11==0.12.0
++idna==3.3
++kiwisolver==1.4.4
++MarkupSafe==2.1.1
++python-dateutil==2.8.2
++Werkzeug==2.1.2
++zipp==3.8.0
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"c68ae30c-734b-4922-943c-fbae6abc42b1\" name=\"Changes\" comment=\"\">\n      <change afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/static/images/Login01.jpg\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/static/images/dinheiro01.jpg\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/static/images/dinheiro02.jpg\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/static/images/grafico01.jpg\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/static/images/grafico02.jpg\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/static/images/indice01.jpg\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/static/images/moeda01.jpg\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/.gitignore\" beforeDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/flask-heroku-example.iml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/gestaodemanda.iml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/misc.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/misc.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/modules.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/modules.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/templates/index.html\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/templates/index.html\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/templates/myth.html\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/templates/myth.html\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProjectId\" id=\"2I9ORW4bPNtiuZMEvz3OEq44Q1v\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\"><![CDATA[{\n  \"keyToString\": {\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\"\n  }\n}]]></component>\n  <component name=\"RunManager\">\n    <configuration name=\"app\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\n      <module name=\"gestaodemanda\" />\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\n      <option name=\"PARENT_ENVS\" value=\"true\" />\n      <envs>\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\n      </envs>\n      <option name=\"SDK_HOME\" value=\"\" />\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/app.py\" />\n      <option name=\"PARAMETERS\" value=\"\" />\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\n      <option name=\"MODULE_MODE\" value=\"false\" />\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\n      <option name=\"INPUT_FILE\" value=\"\" />\n      <method v=\"2\" />\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Python.app\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"c68ae30c-734b-4922-943c-fbae6abc42b1\" name=\"Changes\" comment=\"\" />\n      <created>1669590337804</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1669590337804</updated>\n    </task>\n    <servers />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 34d342728865bf97c6294199c38be061a5cb7350)
++++ b/.idea/workspace.xml	(date 1669725163167)
+@@ -1,21 +1,17 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="c68ae30c-734b-4922-943c-fbae6abc42b1" name="Changes" comment="">
+-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/static/images/Login01.jpg" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/static/images/dinheiro01.jpg" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/static/images/dinheiro02.jpg" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/static/images/grafico01.jpg" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/static/images/grafico02.jpg" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/static/images/indice01.jpg" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/static/images/moeda01.jpg" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/flask-heroku-example.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gestaodemanda.iml" afterDir="false" />
++    <list default="true" id="608eaade-f93d-4147-94eb-f4418412c0b9" name="Changes" comment="">
+       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Teste44.txt" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/Teste45.txt" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/Teste46.txt" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/runtime.txt" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/templates/myth.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/myth.html" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -28,54 +24,26 @@
+   <component name="MarkdownSettingsMigration">
+     <option name="stateVersion" value="1" />
+   </component>
+-  <component name="ProjectId" id="2I9ORW4bPNtiuZMEvz3OEq44Q1v" />
++  <component name="ProjectId" id="2IB57pTaz9QIdGToDUaiiCFNMNT" />
+   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "RunOnceActivity.OpenProjectViewOnStart": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true"
+-  }
+-}]]></component>
+-  <component name="RunManager">
+-    <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+-      <module name="gestaodemanda" />
+-      <option name="INTERPRETER_OPTIONS" value="" />
+-      <option name="PARENT_ENVS" value="true" />
+-      <envs>
+-        <env name="PYTHONUNBUFFERED" value="1" />
+-      </envs>
+-      <option name="SDK_HOME" value="" />
+-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+-      <option name="IS_MODULE_SDK" value="true" />
+-      <option name="ADD_CONTENT_ROOTS" value="true" />
+-      <option name="ADD_SOURCE_ROOTS" value="true" />
+-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app.py" />
+-      <option name="PARAMETERS" value="" />
+-      <option name="SHOW_COMMAND_LINE" value="false" />
+-      <option name="EMULATE_TERMINAL" value="false" />
+-      <option name="MODULE_MODE" value="false" />
+-      <option name="REDIRECT_INPUT" value="false" />
+-      <option name="INPUT_FILE" value="" />
+-      <method v="2" />
+-    </configuration>
+-    <recent_temporary>
+-      <list>
+-        <item itemvalue="Python.app" />
+-      </list>
+-    </recent_temporary>
+-  </component>
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
++  }
++}</component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+     <task active="true" id="Default" summary="Default task">
+-      <changelist id="c68ae30c-734b-4922-943c-fbae6abc42b1" name="Changes" comment="" />
+-      <created>1669590337804</created>
++      <changelist id="608eaade-f93d-4147-94eb-f4418412c0b9" name="Changes" comment="" />
++      <created>1669641974397</created>
+       <option name="number" value="Default" />
+       <option name="presentableId" value="Default" />
+-      <updated>1669590337804</updated>
++      <updated>1669641974397</updated>
+     </task>
+     <servers />
+   </component>
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ProjectRootManager\" version=\"2\" project-jdk-name=\"Python 3.9 (gestaodemanda)\" project-jdk-type=\"Python SDK\" />\n  <component name=\"PyCharmProfessionalAdvertiser\">\n    <option name=\"shown\" value=\"true\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 34d342728865bf97c6294199c38be061a5cb7350)
++++ b/.idea/misc.xml	(date 1669646633637)
+@@ -1,7 +1,4 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.9 (gestaodemanda)" project-jdk-type="Python SDK" />
+-  <component name="PyCharmProfessionalAdvertiser">
+-    <option name="shown" value="true" />
+-  </component>
++  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.10 (gestaodemanda)" project-jdk-type="Python SDK" />
+ </project>
+\ No newline at end of file
