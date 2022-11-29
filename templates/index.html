@@ -9,7 +9,6 @@
 <img alt="Photo: Bengal Tiger" src="{{ url_for('static', filename='images/Login01.jpg') }}">
 <p class="credit">Acesso ao sistema: <a href="{{ url_for('cliente') }}" target="_blank">Login</a></p>
 
-
 <div id="login" align="center">
     <form class="formulario" method="post" action="">
         <h2>Login</h2>
@@ -19,23 +18,17 @@
             <label for="telefone">Nome :</label>
             <input type="text" id="txtNomeEmpresa" name="telefone" placeholder="Digite nome da empresa">
         </div>
-
         <div class="field">
             <label for="password"> Senha :</label>
             <input id="Password" name="password"  required="required" type="password" placeholder="ex. senha">
         </div>
-
-
         <div class="field radiobox">
             <span>Manter logado ?</span>
             <input type="radio" name="novidades" id="sim" value="sim" checked><label for="sim">Sim</label>
             <input type="radio" name="novidades" id="nao" value="nao"><label for="nao">Não</label>
         </div>
-
         <div class="field">
-
             <p class="credit"><a href="{{url_for('cliente')}}"><input type="button" value=" Logar "></a></p>
-
         </div>
     </form>
 </div>
