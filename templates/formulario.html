@@ -20,11 +20,15 @@
         <div><input type="text" id="txt_id_uc" name="Id_UC" placeholder="Num_UC"></div>
         <div class="field">
 
-            <label for="avatar">Importar arquivo .CSV:</label>
+            <a> <label for="start">Arquivo com extenção .CSV:</label>
 
+            <input type="date" id="start" name="trip-start"
+                   value="2022-11-22"
+                   min="2018-01-01" max="2022-12-31">
+</a>
             <input type="file"
-                id="avatar" name="avatar"
-                accept="image/png, image/jpeg">
+                    id="avatar" name="avatar"
+                    accept="image/png, image/jpeg">
             <p class="credit"><input type="submit" name="acao" value="Salvar"></p>
         </div>
 
