@@ -2,34 +2,20 @@
 
 {% block body %}
 
-<h1>{{ the_title }}</h1>
+<h2>{{ the_title }}</h2>
 
 <img alt="Dados do cliente" src="{{ url_for('static', filename='images/moeda01.jpg') }}">
-<p>
-<nav>|
-
-    <a href="{{ url_for('index') }}">Página Inicial</a>    ||
-    <a href="{{ url_for('cliente') }}">Cliente</a>    ||
-    <a href="{{ url_for('manual') }}">Manual</a>    ||
-</nav>
-</p>
-
-<p>Acesso aos dados cadastrais da empresa.</p>
-
-
+<p>Acesso aos dados cadastrais da empresa</p>
     <form class="formulario" method="post">
-        <p> Preencha do formulário</p>
-
+        <p> Preencha o formulário</p>
         <div class="field">
             <label for="nome">ID Empresa</label>
-            <input type="text" id="IdEmpresa" name="nome" placeholder="Digite seu nome*" required>
+            <input type="text" id="IdEmpresa" name="nome" placeholder="Digite o ID" required>
         </div>
-
         <div class="field">
             <label for="telefone">Nome da empresa:</label>
             <input type="text" id="txtNomeEmpresa" name="telefone" placeholder="Digite nome da empresa">
         </div>
-
         <div class="field">
             <label for="email"> E-Mail:</label>
             <input type="email" id="email" name="email" placeholder="Digite seu E-Mail*" required>
@@ -43,11 +29,7 @@
             <label for="mensagem">Sua mensagem:</label>
             <textarea name="mensagem" id="mensagem" placeholder="Mensagem*" required></textarea>
         </div>
-
              <p class="credit"><a href="{{url_for('formulario')}}"><input type="button" value=" Formulário "></a></p>
-
     </form>
-
-<p>.</p>
 
 {% endblock %}
