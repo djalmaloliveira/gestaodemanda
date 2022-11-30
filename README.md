@@ -15,11 +15,14 @@ You should **fork the repository** and then **clone it** so you can manage your 
 ```
 $ git clone https://github.com/your_username/flask-heroku-example.git
 
-```
+## Criar clone local
 
+Forma de clone local
+
+```
 $ git clone https://github.com/djalmaloliveira/gestaodemanda.git
 
-```
+
 
 At this point you should be able to modify the Flask app `app.py`:
 
