@@ -24,7 +24,7 @@ def formulario():
 
 @app.route('/manual.html')
 def manual():
-    return render_template('manual.html', the_title='Manual do Gestão de Demanda')
+    return render_template('manual.html', the_title='Manual da Gestão de Demanda')
 
 @app.route('/symbol.html')
 def symbol():
