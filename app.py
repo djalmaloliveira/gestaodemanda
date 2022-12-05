@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 from flask import jsonify
-import socket 
+import socket
+#Djalma  04/12
 
 app = Flask(__name__)
 
