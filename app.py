@@ -5,6 +5,7 @@ import socket
 
 app = Flask(__name__)
 
+
 # two decorators, same function
 @app.route('/')
 @app.route('/index.html')
