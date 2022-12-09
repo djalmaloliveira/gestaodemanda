@@ -36,6 +36,19 @@ def symbol():
 def myth():
     return render_template('myth.html', the_title='Gestão de Damanda - Cliente')
 
+@app.route('/GraficoBarra01')
+def myth():
+    return render_template('GraficoBarra01.py', the_title='Gestão de Damanda - Gráfico 01')
+
+@app.route('/GraficoBarra02')
+def myth():
+    return render_template('GraficoBarra02.py', the_title='Gestão de Damanda - Gráfico 02')
+
+@app.route('/GraficoBarra03')
+def myth():
+    return render_template('GraficoBarra03.py', the_title='Gestão de Damanda - Gráfico 03')
+
+
 @app.route('/ip')
 def ip():
     hostname = socket.gethostname()    
