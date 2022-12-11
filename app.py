@@ -36,6 +36,21 @@ def symbol():
 def myth():
     return render_template('myth.html', the_title='Gestão de Damanda - Cliente')
 
+<<<<<<< HEAD
+@app.route('/GraficoBarra01')
+def GraficoBarra01():
+    return render_template('GraficoBarra01.html', the_title='Gestão de Damanda - Gráfico 01')
+
+@app.route('/GraficoBarra02')
+def GraficoBarra02():
+    return render_template('GraficoBarra02.html', the_title='Gestão de Damanda - Gráfico 02')
+
+@app.route('/GraficoBarra03')
+def GraficoBarra03():
+    return render_template('GraficoBarra03.html', the_title='Gestão de Damanda - Gráfico 03')
+
+=======
+>>>>>>> 10b6ce2394b533c0e40e52fc8531df08ec477e2c
 
 @app.route('/ip')
 def ip():
