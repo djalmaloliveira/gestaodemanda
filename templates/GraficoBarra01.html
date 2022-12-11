@@ -10,17 +10,24 @@
 {% block body %}
 
 
-import pandas as pd
-import plotly.offline as py
-import plotly.graph_objs as go
-py.init_notebook_mode(connected=True)
+<!-- to be filled by the Python script -->
+<h2>{{ the_title }}</h2>
+
+<!-- note how items from the "static" folder are linked -->
+<img alt="Manual: Sistema de Gestão de Demanda Contratada" src="{{ url_for('static', filename='images/grafico02.jpg') }}">
 
 
+<div id="login" align="center">
+    <form class="formulario" method="post" action="">
+        <p>
+        <h3>Manual de operação do sistema de gestão de demanda contrata...</h3>
+        </p>
+        <p>
+        .
+        </p>
 
-trace = go.Bar(x = ['Banana', 'Maçã', 'Uva'],
-               y = [10, 20, 30])
-data = [trace]
-py.iplot(data)
+    </form>
+</div>
 
 
 
