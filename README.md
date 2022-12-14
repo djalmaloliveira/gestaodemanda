@@ -7,6 +7,7 @@ https://gestaodemandagrupoa.onrender.com
 site no Heroku:
 https://gestaodemandagrupoa.herokuapp.com/
 
+
 This is an example repository that uses **Flask** and **Gunicorn** to deploy your project to Heroku. [Demo app link](https://flask-basic-example.herokuapp.com/)
 
 ## Fork The Repository
@@ -15,7 +16,7 @@ You should **fork the repository** and then **clone it** so you can manage your 
 
 ```
 $ git clone https://github.com/your_username/flask-heroku-example.git
-
+```
 ## Criar clone local
 
 Forma de clone local
@@ -23,7 +24,7 @@ Forma de clone local
 ```
 $ git clone https://github.com/djalmaloliveira/gestaodemanda.git
 
-
+```
 
 At this point you should be able to modify the Flask app `app.py`:
 
