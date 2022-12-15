@@ -85,3 +85,20 @@ To https://git.heroku.com/your_app_name.git
 ```
 
 That's it, you can visit your app now with `heroku open`.
+
+
+https://www.youtube.com/watch?v=JCcrdW4Llm0
+
+
+Procedimento
+Settings
+Devolopers settings
+Personal access tokens
+Gerar new token
+Note "Meu acesso ao token"
+repo
+Generation token
+copy o token
+git push
+usuario: djalmaloliveira
+senha: colar o valor do token
