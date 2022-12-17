@@ -109,3 +109,6 @@ senha: colar o valor do token
 # Como processar dados de solicitação de entrada no Flask
 https://www.digitalocean.com/community/tutorials/processing-incoming-request-data-in-flask-pt
 
+
+# Tentando importar um arquivo csv ou json para o Flask7
+https://cursos.alura.com.br/forum/topico-tentando-importar-um-arquivo-csv-ou-json-para-o-flask-131355
