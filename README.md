@@ -102,3 +102,10 @@ copy o token
 git push
 usuario: djalmaloliveira
 senha: colar o valor do token
+
+
+#
+# // Tutorial //
+# Como processar dados de solicitação de entrada no Flask
+https://www.digitalocean.com/community/tutorials/processing-incoming-request-data-in-flask-pt
+
